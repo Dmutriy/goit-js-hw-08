@@ -7,8 +7,6 @@ const formRef = document.querySelector('.feedback-form');
 initPage();
 
 const onFormInput = event => {
-  //   console.log(event.target.name);
-  //   console.log(event.target.value);
   const { name, value } = event.target;
 
   let saveData = load(LOCALE_STORAGE_KEY);
@@ -19,7 +17,6 @@ const onFormInput = event => {
   save(LOCALE_STORAGE_KEY, saveData);
 };
 
-// done
 const throttledOnFormInput = throttle(onFormInput, 500);
 formRef.addEventListener('input', throttledOnFormInput);
 
