@@ -1,12 +1,6 @@
-// Add imports above this line
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { galleryItems } from './gallery-items';
-// Change code below this line
-
-// console.log(galleryItems);
-
-// ---------------//------------//
 
 const galleryRef = document.querySelector('.gallery');
 galleryRef.addEventListener('click', onImageClick);
@@ -19,15 +13,15 @@ const addItemGallery = galleryItems.map(
   ({ preview, original, description }) => {
     return `
     <div class="gallery__item">
-      <a href="${original}" class="gallery__link">
+        <a href="${original}" class="gallery__link">
         <img src="${preview}" alt="${description}" class="gallery__image">
-      </a>
+        </a>
     </div>`;
   }
 );
 const markup = addItemGallery.join('');
 galleryRef.insertAdjacentHTML('afterbegin', markup);
-//---------------------------------------------
+
 new SimpleLightbox('.gallery a', {
   captions: true,
   captionType: 'attr',
